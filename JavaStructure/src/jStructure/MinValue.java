@@ -1,6 +1,6 @@
 package jStructure;
 
-import jUtils.Utils;
+import jUtils.PrintUtils;
 
 import java.util.Scanner;
 
@@ -25,7 +25,7 @@ public class MinValue {
 				}
 			} catch (Exception e) {
 				keyboard.nextLine();
-				Utils.print("\nInvalid input! Try again!\n");
+				PrintUtils.print("\nInvalid input! Try again!\n");
 			}
 		}
 
@@ -36,6 +36,6 @@ public class MinValue {
 				min = arr[i];
 		}
 		
-		Utils.print("Min: " + min);
+		PrintUtils.print("Min: " + min);
 	}
 }
