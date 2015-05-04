@@ -4,15 +4,6 @@ package jStructure.sort;
 public class SelectionSort {
 
 	public static void selectionSort(int arr[], int size) {
-		int min = arr[0];
-		for(int i = 0; i < size; i++) {
-			
-		}
-	}
-	
-	public static void main(String[] args) {
-		int arr[] = {64,25,12,22,11};
-		int size = 5;
 		for(int i = 0; i < size - 1; i++) {
 			// Gia su phan tu 0 la phan tu nho nhat
 			int min = i;
@@ -28,9 +19,15 @@ public class SelectionSort {
 			}
 		}
 		
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < size; i++) {
 			System.out.print(arr[i] + " ");
 		}
 		System.out.println("");
+	}
+	
+	public static void main(String[] args) {
+		int arr[] = {40, 2, 1, 43, 3, 65, 0, -1, 58, 3, 42, 4};
+		int size = 12;
+		selectionSort(arr, size);
 	}
 }

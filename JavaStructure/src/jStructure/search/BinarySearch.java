@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class BinarySearch {
 
-	static int binarySearch(int[] arr, int size, int num) {
+	static int binarySearch(int[] arr, int num) {
 		long cur = System.currentTimeMillis();
-		int left = 0, right = size - 1;
+		int left = 0, right = arr.length - 1;
 		
 		while(left <= right) {
-			int mid = (arr[left] + arr[right]) / 2;
+			int mid = (left + right) / 2;
 			if(arr[mid] == num) {
 				System.out.println("Exec in: " + (System.currentTimeMillis() - cur) + "");
 				return mid;
@@ -25,21 +25,24 @@ public class BinarySearch {
 	}
 	
 	public static void main(String[] args) {
-		int size = 100000000;
-		int arr[] = new int[size];
-		for(int i = 0; i < size; i++) {
-			arr[i] = i;
-		}
+//		int size = 100000000;
+//		int arr[] = new int[size];
+//		for(int i = 0; i < size; i++) {
+//			arr[i] = i;
+//		}
+		
+		int arr[] = {-9, -9, -5, -2, 0, 3, 7, 7, 10, 15};
+		int size = 10;
 		
 		Scanner scanner = new Scanner(System.in);
 		int input = 0;
-		while(input >= 0) {
+		while(input != -100) {
 			System.out.println("Insert value: ");
 			input = scanner.nextInt();
 			scanner.nextLine();
 			
-			if(input >= 0) {
-				int searchResult = binarySearch(arr, size, input); 
+			if(input != 100) {
+				int searchResult = binarySearch(arr, input); 
 				if(searchResult >= 0)
 					System.out.println("Found " + input + " at " + searchResult);
 				else
